@@ -1,0 +1,88 @@
+[gd_scene format=3 uid="uid://jjg5wuwsftn1"]
+
+[ext_resource type="Script" uid="uid://b0x317n151w5b" path="res://script/Jebakan.gd" id="1_wt2kt"]
+[ext_resource type="Texture2D" uid="uid://d040ou6pqrvyn" path="res://Assets/collection/sci-fi-facility-asset-pack/lasers_spritesheet.png" id="2_7dt3v"]
+[ext_resource type="Script" uid="uid://li150al2ukdv" path="res://script/JebakanX.gd" id="3_srkbw"]
+[ext_resource type="Script" uid="uid://mj65ky8r12gc" path="res://script/listrik.gd" id="4_xet7l"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o12ya"]
+atlas = ExtResource("2_7dt3v")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nqth4"]
+atlas = ExtResource("2_7dt3v")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xet7l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o12ya")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nqth4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o12ya"]
+size = Vector2(18.5, 37)
+
+[node name="Node2D" type="Node2D" unique_id=354843590]
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="." unique_id=1000339512]
+script = ExtResource("1_wt2kt")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="AnimatableBody2D" unique_id=990612353]
+build_mode = 1
+polygon = PackedVector2Array(-16, -4, -12, -7, -8, -4, -3, -7, -1, -4, 4, -8, 7, -3, 12, -8, 15, -5, 15, -2, 13, 1, 9, 1, 7, -3, 5, 0, 1, 1, -1, -4, -1, 0, -5, 1, -8, -4, -8, -4, -9, 0, -14, 1)
+one_way_collision = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="AnimatableBody2D" unique_id=1830600386]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_xet7l")
+
+[node name="Area2D" type="Area2D" parent="AnimatableBody2D" unique_id=1578995018]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D/Area2D" unique_id=2083304163]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_o12ya")
+
+[node name="JebakanX" type="AnimatableBody2D" parent="." unique_id=2058256706]
+position = Vector2(42, 23)
+rotation = -1.5707964
+sync_to_physics = false
+script = ExtResource("3_srkbw")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="JebakanX" unique_id=967406418]
+texture_filter = 1
+rotation = 1.5707964
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_xet7l")
+autoplay = "default"
+frame_progress = 0.2683024
+
+[node name="Area2D" type="Area2D" parent="JebakanX" unique_id=556921583]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="JebakanX/Area2D" unique_id=565953342]
+position = Vector2(-6, -2.1855694e-08)
+shape = SubResource("RectangleShape2D_o12ya")
+
+[node name="Listrik" type="Area2D" parent="." unique_id=1394744150]
+position = Vector2(121, 12)
+script = ExtResource("4_xet7l")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Listrik" unique_id=195282384]
+texture_filter = 1
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_xet7l")
+autoplay = "default"
+frame_progress = 0.3742127
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Listrik" unique_id=2070453951]
+position = Vector2(-0.25, 5.5)
+shape = SubResource("RectangleShape2D_o12ya")
+
+[connection signal="body_entered" from="Listrik" to="Listrik" method="_on_body_entered"]

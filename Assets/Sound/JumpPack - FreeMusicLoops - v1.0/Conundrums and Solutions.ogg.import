@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c36x36mr5yps4"
+path="res://.godot/imported/Conundrums and Solutions.ogg-5b0dfde2f5c9fa783fdef9b132eba63d.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Sound/JumpPack - FreeMusicLoops - v1.0/Conundrums and Solutions.ogg"
+dest_files=["res://.godot/imported/Conundrums and Solutions.ogg-5b0dfde2f5c9fa783fdef9b132eba63d.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

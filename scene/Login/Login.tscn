@@ -1,0 +1,162 @@
+[gd_scene format=3 uid="uid://c40xngo0f8vt"]
+
+[ext_resource type="FontFile" uid="uid://d1f0gkvlgd4d6" path="res://Assets/FONT/determination.ttf" id="1_agkfj"]
+[ext_resource type="Texture2D" uid="uid://dtkmy3mqpa63c" path="res://Assets/Background/Dekstop Background_2.jpg" id="1_k4hvr"]
+[ext_resource type="Script" uid="uid://cjlk2uxmql6r8" path="res://scene/Login/lOGINN.gd" id="1_snky6"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_snky6"]
+texture = ExtResource("1_k4hvr")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_snky6"]
+bg_color = Color(0.14901961, 0.14901961, 0.14901961, 0.61960787)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k1xvb"]
+bg_color = Color(0.14901961, 0.14901961, 0.14901961, 0.61960787)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dqtpt"]
+bg_color = Color(0.15, 0.15, 0.15, 0.61960787)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n8sdo"]
+bg_color = Color(0.14901961, 0.14901961, 0.14901961, 0.61960787)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o286n"]
+bg_color = Color(0.14901961, 0.14901961, 0.14901961, 0.61960787)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yxy8y"]
+bg_color = Color(0.14901961, 0.14901961, 0.14901961, 0.61960787)
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+
+[node name="Node2D" type="Node2D" unique_id=1841569326]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1157462909]
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=661800255]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_snky6")
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Control" unique_id=1846765769]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2.0
+offset_right = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_snky6")
+
+[node name="Label" type="Label" parent="CanvasLayer/Control" unique_id=160569053]
+layout_mode = 0
+offset_left = 397.0
+offset_top = 55.0
+offset_right = 1486.0
+offset_bottom = 243.0
+theme_override_fonts/font = ExtResource("1_agkfj")
+theme_override_font_sizes/font_size = 100
+text = "Login/Register"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EmailLabel" type="Label" parent="CanvasLayer/Control" unique_id=1600958678]
+layout_mode = 0
+offset_left = 291.0
+offset_top = 320.0
+offset_right = 675.0
+offset_bottom = 373.0
+theme_override_fonts/font = ExtResource("1_agkfj")
+theme_override_font_sizes/font_size = 38
+text = "Masukan Email Anda"
+
+[node name="EmailInput" type="LineEdit" parent="CanvasLayer/Control" unique_id=1783556162]
+layout_mode = 0
+offset_left = 276.0
+offset_top = 380.0
+offset_right = 1492.0
+offset_bottom = 443.0
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_snky6")
+
+[node name="PasswordLabel" type="Label" parent="CanvasLayer/Control" unique_id=1076472600]
+layout_mode = 0
+offset_left = 291.0
+offset_top = 498.0
+offset_right = 751.0
+offset_bottom = 551.0
+theme_override_fonts/font = ExtResource("1_agkfj")
+theme_override_font_sizes/font_size = 38
+text = "Masukan Password Anda"
+
+[node name="PasswordInput" type="LineEdit" parent="CanvasLayer/Control" unique_id=266679223]
+layout_mode = 0
+offset_left = 276.0
+offset_top = 556.0
+offset_right = 1492.0
+offset_bottom = 619.0
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_k1xvb")
+secret = true
+
+[node name="ErrorMessage" type="Label" parent="CanvasLayer/Control" unique_id=1170692406]
+layout_mode = 0
+offset_left = 276.0
+offset_top = 644.0
+offset_right = 1323.0
+offset_bottom = 697.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_agkfj")
+theme_override_font_sizes/font_size = 30
+text = "Jika Tidak Bisa Login Maka Anda Harus Register"
+
+[node name="LoginButton" type="Button" parent="CanvasLayer/Control" unique_id=856006808]
+layout_mode = 0
+offset_left = 281.0
+offset_top = 711.0
+offset_right = 502.0
+offset_bottom = 809.0
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxFlat_dqtpt")
+theme_override_styles/hover = SubResource("StyleBoxFlat_n8sdo")
+text = "Login"
+
+[node name="RegisterButton" type="Button" parent="CanvasLayer/Control" unique_id=2030891548]
+layout_mode = 0
+offset_left = 601.0
+offset_top = 711.0
+offset_right = 822.0
+offset_bottom = 809.0
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxFlat_o286n")
+theme_override_styles/hover = SubResource("StyleBoxFlat_yxy8y")
+text = "Register
+"
+
+[connection signal="pressed" from="CanvasLayer/Control/LoginButton" to="CanvasLayer/Control" method="_on_login_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/RegisterButton" to="CanvasLayer/Control" method="_on_register_button_pressed"]

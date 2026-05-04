@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://duqrbe77mp5kn"
+path="res://.godot/imported/Underground Noir.ogg-26d1e6a9590c0e9cf37b95ba2e674e3d.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Sound/JumpPack - FreeMusicLoops - v1.0/Underground Noir.ogg"
+dest_files=["res://.godot/imported/Underground Noir.ogg-26d1e6a9590c0e9cf37b95ba2e674e3d.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,184 @@
+[gd_scene format=3 uid="uid://b7yykxndqnhie"]
+
+[ext_resource type="Script" uid="uid://cb2i72p8u2ep0" path="res://script/pause.gd" id="1_cirod"]
+[ext_resource type="Shader" uid="uid://buggd7sd72dym" path="res://scene/pause.gdshader" id="1_e83wn"]
+[ext_resource type="FontFile" uid="uid://d1f0gkvlgd4d6" path="res://Assets/FONT/determination.ttf" id="1_snhp4"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cirod"]
+shader = ExtResource("1_e83wn")
+shader_parameter/lod = 0.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e83wn"]
+bg_color = Color(0.21960784, 0.21960784, 0.21960784, 0.5372549)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+corner_radius_top_left = 20
+corner_radius_bottom_right = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cirod"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 20
+corner_radius_bottom_right = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2yf20"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 20
+corner_radius_bottom_right = 20
+
+[sub_resource type="Animation" id="Animation_e83wn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BlurReact:material:shader_parameter/lod")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PanelContainer:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_cirod"]
+resource_name = "blur"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BlurReact:material:shader_parameter/lod")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.800000038]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PanelContainer:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2yf20"]
+_data = {
+&"RESET": SubResource("Animation_e83wn"),
+&"blur": SubResource("Animation_cirod")
+}
+
+[node name="Pause" type="Control" unique_id=1440951361]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cirod")
+
+[node name="BlurReact" type="ColorRect" parent="." unique_id=1736028782]
+material = SubResource("ShaderMaterial_cirod")
+layout_mode = 0
+offset_right = 1930.0
+offset_bottom = 1086.0
+mouse_filter = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1815043457]
+modulate = Color(1, 1, 1, 0)
+self_modulate = Color(1, 1, 1, 0.4627451)
+layout_mode = 0
+offset_left = 646.0
+offset_top = 161.0
+offset_right = 1308.0
+offset_bottom = 851.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=1392354937]
+layout_mode = 2
+theme_override_constants/separation = 45
+
+[node name="Resume" type="Button" parent="PanelContainer/VBoxContainer" unique_id=2006376103]
+auto_translate_mode = 1
+clip_contents = true
+custom_minimum_size = Vector2(-100, 200)
+layout_direction = 4
+layout_mode = 2
+size_flags_vertical = 0
+size_flags_stretch_ratio = 0.37
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_snhp4")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_e83wn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_cirod")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2yf20")
+text = "Resume"
+
+[node name="Restart" type="Button" parent="PanelContainer/VBoxContainer" unique_id=1880635498]
+auto_translate_mode = 1
+clip_contents = true
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_snhp4")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_e83wn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_cirod")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2yf20")
+text = "Restart"
+
+[node name="menu" type="Button" parent="PanelContainer/VBoxContainer" unique_id=2077060727]
+auto_translate_mode = 1
+clip_contents = true
+custom_minimum_size = Vector2(-100, 200)
+layout_direction = 4
+layout_mode = 2
+size_flags_vertical = 0
+size_flags_stretch_ratio = 0.37
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_snhp4")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_e83wn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_cirod")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2yf20")
+text = "Back To Menu"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=214010681]
+libraries/ = SubResource("AnimationLibrary_2yf20")
+
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/menu" to="." method="_on_menu_pressed"]

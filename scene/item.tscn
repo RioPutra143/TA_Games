@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://docyhnnmpvcmm"]
+
+[ext_resource type="Script" uid="uid://yuhrxmdbub73" path="res://CheckPoiint.gd" id="1_akoh1"]
+[ext_resource type="Texture2D" uid="uid://cegubfkkwunby" path="res://icon.svg" id="2_vng7q"]
+[ext_resource type="Script" uid="uid://bhpkabe3470bu" path="res://scene/Level 1-2/key.gd" id="3_7anpq"]
+[ext_resource type="Texture2D" uid="uid://ybopver0c7od" path="res://Assets/collection/Key Items 16x16/01.png" id="3_vng7q"]
+[ext_resource type="Script" uid="uid://kt4ggch80b0l" path="res://scene/Level 1-2/locked_door.gd" id="5_oqaqr"]
+[ext_resource type="Texture2D" uid="uid://3at2y0wsge38" path="res://Assets/collection/tRAP/Moving Platfrom_D.png" id="6_nuqry"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7anpq"]
+size = Vector2(45, 49)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7anpq"]
+radius = 17.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ryx6g"]
+size = Vector2(6, 46)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_oqaqr"]
+radius = 27.073973
+
+[node name="ItemSekaliPakai" type="Area2D" unique_id=1414900161]
+position = Vector2(206, -40)
+script = ExtResource("1_akoh1")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=156486000]
+position = Vector2(-1.7500008, -2.249999)
+scale = Vector2(0.37109372, 0.37890625)
+texture = ExtResource("2_vng7q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1666769861]
+position = Vector2(-1.5, -2.5)
+shape = SubResource("RectangleShape2D_7anpq")
+
+[node name="Label" type="Label" parent="." unique_id=783947434]
+offset_left = 28.0
+offset_top = -10.0
+offset_right = 60.0
+offset_bottom = 2.0
+theme_override_font_sizes/font_size = 8
+text = "Tekan E"
+
+[node name="Key" type="Area2D" parent="." unique_id=2017650014]
+position = Vector2(-140, 9)
+script = ExtResource("3_7anpq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Key" unique_id=329768607]
+shape = SubResource("CircleShape2D_7anpq")
+
+[node name="Sprite2D" type="Sprite2D" parent="Key" unique_id=1576959808]
+texture_filter = 1
+texture = ExtResource("3_vng7q")
+
+[node name="LockedDoor" type="StaticBody2D" parent="." unique_id=1102258632]
+position = Vector2(-206, 40)
+script = ExtResource("5_oqaqr")
+
+[node name="Sprite2D" type="Sprite2D" parent="LockedDoor" unique_id=1839786142]
+texture_filter = 1
+rotation = -1.5707964
+texture = ExtResource("6_nuqry")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LockedDoor" unique_id=743569453]
+position = Vector2(-1, 0)
+shape = SubResource("RectangleShape2D_ryx6g")
+
+[node name="InteractionArea" type="Area2D" parent="LockedDoor" unique_id=1873497566]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LockedDoor/InteractionArea" unique_id=1123310499]
+position = Vector2(-6, 0)
+shape = SubResource("CircleShape2D_oqaqr")
+
+[connection signal="body_entered" from="Key" to="Key" method="_on_body_entered"]
+[connection signal="body_entered" from="LockedDoor/InteractionArea" to="LockedDoor" method="_on_interaction_area_body_entered"]

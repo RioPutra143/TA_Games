@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c070w26j8fqbn"
+path="res://.godot/imported/Distant City Lights.ogg-466d1a9f214cd36209006327bcf29ded.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Sound/JumpPack - FreeMusicLoops - v1.0/Distant City Lights.ogg"
+dest_files=["res://.godot/imported/Distant City Lights.ogg-466d1a9f214cd36209006327bcf29ded.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

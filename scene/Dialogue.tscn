@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://147l8sdbblnc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5bfew"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+
+[node name="Node2D" type="Node2D" unique_id=1373425355]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1753789880]
+
+[node name="Panel" type="Panel" parent="CanvasLayer" unique_id=1930932669]
+offset_right = 825.0
+offset_bottom = 339.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_5bfew")
+
+[node name="ChatText" type="RichTextLabel" parent="CanvasLayer/Panel" unique_id=117025416]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+text = "Haiii"
+visible_characters = 2
+visible_ratio = 0.435

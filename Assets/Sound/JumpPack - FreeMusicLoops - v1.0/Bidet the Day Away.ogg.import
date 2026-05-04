@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://nsf3i3yj4ecm"
+path="res://.godot/imported/Bidet the Day Away.ogg-7faa6cace9b37e7163a5d2b30c34cf73.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Sound/JumpPack - FreeMusicLoops - v1.0/Bidet the Day Away.ogg"
+dest_files=["res://.godot/imported/Bidet the Day Away.ogg-7faa6cace9b37e7163a5d2b30c34cf73.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

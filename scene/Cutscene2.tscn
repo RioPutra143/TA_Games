@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://cqryv3yvqohyh"]
+
+[ext_resource type="Script" uid="uid://ce771dj66v3eg" path="res://scene/Level 1-2/cutscene_Next.gd" id="1_o6qwf"]
+[ext_resource type="FontFile" uid="uid://d1f0gkvlgd4d6" path="res://Assets/FONT/determination.ttf" id="2_86nww"]
+[ext_resource type="Texture2D" uid="uid://cd8j1ngfl4kt" path="res://Assets/collection/Keyboard Extras.png" id="3_6a7pr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5uoqv"]
+atlas = ExtResource("3_6a7pr")
+region = Rect2(96, 16, 32, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6v35e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5uoqv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="Control" type="Control" unique_id=1099902029]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_o6qwf")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=646806742]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="StoryLabel" type="RichTextLabel" parent="." unique_id=740214773]
+layout_mode = 0
+offset_right = 1914.0
+offset_bottom = 1073.0
+theme_override_fonts/normal_font = ExtResource("2_86nww")
+theme_override_font_sizes/normal_font_size = 64
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextTimer" type="Timer" parent="." unique_id=1081720818]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1769210597]
+texture_filter = 1
+position = Vector2(1706, 1022)
+scale = Vector2(5, 5.406)
+sprite_frames = SubResource("SpriteFrames_6v35e")
+
+[node name="Label" type="Label" parent="." unique_id=267941314]
+layout_mode = 0
+offset_left = 1776.0
+offset_top = 1011.0
+offset_right = 1914.0
+offset_bottom = 1038.0
+theme_override_fonts/font = ExtResource("2_86nww")
+theme_override_font_sizes/font_size = 20
+text = "To Skip"
+horizontal_alignment = 1

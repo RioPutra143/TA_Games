@@ -1,0 +1,106 @@
+[gd_scene format=3 uid="uid://tx76mxltyk0x"]
+
+[ext_resource type="Script" uid="uid://binhdqm52o5pj" path="res://scene/Level 1-2/enemy.gd" id="1_45oor"]
+[ext_resource type="Texture2D" uid="uid://blebstnogwkq3" path="res://Assets/Character/floating_skull_enemy/style_C/PNG/frame0001.png" id="1_d5vqx"]
+[ext_resource type="Texture2D" uid="uid://hkw1ra4l025i" path="res://Assets/Character/floating_skull_enemy/style_C/PNG/frame0002.png" id="2_45oor"]
+[ext_resource type="Texture2D" uid="uid://t3wx6i6qn0p7" path="res://Assets/Character/floating_skull_enemy/style_C/PNG/frame0003.png" id="3_2mmww"]
+[ext_resource type="Texture2D" uid="uid://cbavrucekc4v4" path="res://Assets/Character/floating_skull_enemy/style_C/PNG/frame0004.png" id="4_c7gas"]
+[ext_resource type="Texture2D" uid="uid://bnun80mu153rg" path="res://Assets/Character/floating_skull_enemy/style_C/PNG/frame0005.png" id="5_847mn"]
+[ext_resource type="Texture2D" uid="uid://bp6beamvq1ayq" path="res://Assets/Character/floating_skull_enemy/style_C/PNG/frame0006.png" id="6_jrxdo"]
+[ext_resource type="Texture2D" uid="uid://csg3budggm2x1" path="res://Assets/Character/floating_skull_enemy/style_C/PNG/frame0007.png" id="7_rg62a"]
+[ext_resource type="Texture2D" uid="uid://cnny8c4vuscam" path="res://Assets/Character/floating_skull_enemy/style_C/PNG/frame0008.png" id="8_16b6f"]
+[ext_resource type="Texture2D" uid="uid://c0wmie3vb6f8x" path="res://Assets/Character/floating_skull_enemy/style_C/PNG/frame0009.png" id="9_hic4k"]
+[ext_resource type="Texture2D" uid="uid://bhliiwviiri6t" path="res://Assets/Character/floating_skull_enemy/style_C/PNG/frame0010.png" id="10_2hwrl"]
+[ext_resource type="Texture2D" uid="uid://qr7tdv0cnri8" path="res://Assets/Character/floating_skull_enemy/style_C/PNG/frame0011.png" id="11_8n57c"]
+[ext_resource type="Texture2D" uid="uid://cbh5rxiul8g55" path="res://Assets/Character/floating_skull_enemy/style_C/PNG/frame0012.png" id="12_xe3fa"]
+[ext_resource type="Texture2D" uid="uid://b03td1sqxql3" path="res://Assets/Character/floating_skull_enemy/style_C/PNG/frame0013.png" id="13_6wydk"]
+[ext_resource type="Texture2D" uid="uid://cavgde53d0n8p" path="res://Assets/Character/floating_skull_enemy/style_C/PNG/frame0014.png" id="14_phyfw"]
+[ext_resource type="Texture2D" uid="uid://djhijspr342b4" path="res://Assets/Character/floating_skull_enemy/style_C/PNG/frame0015.png" id="15_6d5ru"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fecil"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_d5vqx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_45oor")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_2mmww")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_c7gas")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_847mn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_jrxdo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_rg62a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_16b6f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_hic4k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_2hwrl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_8n57c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_xe3fa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_6wydk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_phyfw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_6d5ru")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hk2k2"]
+radius = 11.0
+height = 28.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2mmww"]
+radius = 19.026299
+
+[node name="Enemy" type="CharacterBody2D" unique_id=567012193]
+collision_mask = 3
+script = ExtResource("1_45oor")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2060989550]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_fecil")
+animation = &"Idle"
+autoplay = "Idle"
+frame_progress = 0.6978119
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2009313196]
+position = Vector2(1, 1)
+shape = SubResource("CapsuleShape2D_hk2k2")
+
+[node name="EdgeDetector" type="RayCast2D" parent="." unique_id=285445206]
+position = Vector2(10, 0)
+target_position = Vector2(0, 10)
+collision_mask = 2
+
+[node name="hitbox" type="Area2D" parent="." unique_id=579236406]
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox" unique_id=2092235039]
+shape = SubResource("CircleShape2D_2mmww")
+
+[connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]

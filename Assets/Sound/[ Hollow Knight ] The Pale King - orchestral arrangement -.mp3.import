@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://be0mmhx28gyqx"
+path="res://.godot/imported/[ Hollow Knight ] The Pale King - orchestral arrangement -.mp3-a7a53e51e1f787355eae48d7efac1b87.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sound/[ Hollow Knight ] The Pale King - orchestral arrangement -.mp3"
+dest_files=["res://.godot/imported/[ Hollow Knight ] The Pale King - orchestral arrangement -.mp3-a7a53e51e1f787355eae48d7efac1b87.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cm20qitjk8rsi"
+path="res://.godot/imported/Late Night Rumble.ogg-8943a39a3a9158d1363653c293d9c2fd.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Sound/JumpPack - FreeMusicLoops - v1.0/Late Night Rumble.ogg"
+dest_files=["res://.godot/imported/Late Night Rumble.ogg-8943a39a3a9158d1363653c293d9c2fd.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

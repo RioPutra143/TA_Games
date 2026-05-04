@@ -1,0 +1,160 @@
+[gd_scene format=3 uid="uid://bu7llhxo6qgmh"]
+
+[ext_resource type="Script" uid="uid://bsrmsfmav1wx3" path="res://scene/Level 3/NPC.gd" id="1_g0tuu"]
+[ext_resource type="Texture2D" uid="uid://clh28wifs56yb" path="res://Assets/Character/player/idle/male_hero_template-idle.png" id="1_qu14f"]
+[ext_resource type="FontFile" uid="uid://d1f0gkvlgd4d6" path="res://Assets/FONT/determination.ttf" id="3_iyt5t"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hkrj6"]
+atlas = ExtResource("1_qu14f")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g0tuu"]
+atlas = ExtResource("1_qu14f")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iyt5t"]
+atlas = ExtResource("1_qu14f")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yr3jd"]
+atlas = ExtResource("1_qu14f")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gkk85"]
+atlas = ExtResource("1_qu14f")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mldti"]
+atlas = ExtResource("1_qu14f")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d3ftl"]
+atlas = ExtResource("1_qu14f")
+region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wfye0"]
+atlas = ExtResource("1_qu14f")
+region = Rect2(896, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pol5u"]
+atlas = ExtResource("1_qu14f")
+region = Rect2(1024, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tae4j"]
+atlas = ExtResource("1_qu14f")
+region = Rect2(1152, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cvg51"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hkrj6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g0tuu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iyt5t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yr3jd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gkk85")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mldti")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d3ftl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wfye0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pol5u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tae4j")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_plu35"]
+size = Vector2(65, 51)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qu14f"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yr3jd"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+
+[node name="Ending" type="Node2D" unique_id=1073369364]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1202765825]
+script = ExtResource("1_g0tuu")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D" unique_id=770032576]
+modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_cvg51")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=173050591]
+position = Vector2(-2.5, -2.5)
+shape = SubResource("RectangleShape2D_plu35")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Area2D" unique_id=1897102364]
+
+[node name="Panel" type="Panel" parent="Area2D/CanvasLayer" unique_id=1305484894]
+anchors_preset = -1
+anchor_left = 0.117000006
+anchor_top = 0.172
+anchor_right = 0.117000006
+anchor_bottom = 0.172
+offset_left = -324.64
+offset_top = -157.76001
+offset_right = 500.36
+offset_bottom = 181.23999
+theme_override_styles/panel = SubResource("StyleBoxFlat_qu14f")
+
+[node name="Label" type="Label" parent="Area2D/CanvasLayer/Panel" unique_id=1329378923]
+layout_mode = 0
+offset_left = 118.0
+offset_top = 39.0
+offset_right = 694.0
+offset_bottom = 122.0
+theme_override_fonts/font = ExtResource("3_iyt5t")
+theme_override_font_sizes/font_size = 60
+text = "Akhiri Semua Ini?"
+
+[node name="Button_Ya" type="Button" parent="Area2D/CanvasLayer/Panel" unique_id=1907227564]
+layout_mode = 0
+offset_left = 123.0
+offset_top = 208.0
+offset_right = 329.0
+offset_bottom = 270.0
+theme_override_fonts/font = ExtResource("3_iyt5t")
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxFlat_yr3jd")
+text = "Ya"
+
+[node name="Button_Tidak" type="Button" parent="Area2D/CanvasLayer/Panel" unique_id=1433487969]
+layout_mode = 0
+offset_left = 468.0
+offset_top = 206.0
+offset_right = 674.0
+offset_bottom = 268.0
+theme_override_fonts/font = ExtResource("3_iyt5t")
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxFlat_yr3jd")
+text = "No"

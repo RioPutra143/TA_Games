@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://434asmoncx32"
+path="res://.godot/imported/Morning Weather Report.ogg-765f6c4c8c1128b0b30e7e86afd2ce2d.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Sound/JumpPack - FreeMusicLoops - v1.0/Morning Weather Report.ogg"
+dest_files=["res://.godot/imported/Morning Weather Report.ogg-765f6c4c8c1128b0b30e7e86afd2ce2d.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
